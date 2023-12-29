@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>scientific calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+      background-color: #FBFFDC;
+    }
+  </style>
+  <body>
+    <h1 class="text-center"> Scientific Calculator</h1>
+
+    <div class="container d-flex justify-content-center allign-items-center w-50" style="height: 66vh;">
+      <!-- abhi main ek table laga rahi as a template for my calculator from bootstrap -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="4"><input type="text" id="show" class="form-control"></th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.PI')">&#8508;</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.sin')">sin</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.cos')">cos</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.tan')">tan</button></td>
+          </tr>
+          
+          <tr>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.sqrt')">&#8730</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.cbrt')">&#8731;</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.exp')">exp</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.E')">E</button></td>
+          </tr>
+          <tr>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.log10')">log</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.pow')">x^y</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('%')">%</button></td>
+            <td><button class="btn btn-info text-center w-100" onclick="getnum('Math.round')">S>D</button></td>
+
+          </tr>
+          
+          <tr>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="clearscreen()">C</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('&#40;')">(</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('&#41;')">)</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('/')">/</button></td>
+          </tr>
+
+          <tr>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('7')">7</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('8')">8</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('9')">9</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('*')">*</button></td>
+          </tr>
+          
+          <tr>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('4')">4</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('5')">5</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('6')">6</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('-')">-</button></td>
+          </tr>
+          
+          <tr>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('1')">1</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('2')">2</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('3')">3</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('+')">+</button></td>
+          </tr>
+
+          <tr>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('0')">0</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getnum('.')">.</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="removeonenum()">AC</button></td>
+            <td><button class="btn btn-light border-black text-center w-100" onclick="getanswer()">=</button></td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="./script/calculator.js"></script>
+  </body>
+</html>
+
+<!-- get and set se hum input field pe show krwaty hain .. abhi get hogyi now i set -->
+<!-- input wali field ko id di -->
+<!-- udher jo function banaya tha usko document.getelemtbyid kiya and input field wali id de di -->
